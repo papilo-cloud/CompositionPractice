@@ -9,7 +9,7 @@ import { ProductPrice } from './component/productCard/ProductPrice'
 import { ProductText } from './component/productCard/ProductText'
 import { ProductTitle } from './component/productCard/ProductTitle'
 
-interface Product {
+export interface Product {
   id: number;
   title: string;
   image: string;
@@ -19,7 +19,7 @@ interface Product {
   text: string
 }
 
-const procuct: Product = {
+const product: Product = {
   id: 1,
   title: 'Gabrielle Essence Eau De Parfum',
   image: '',
@@ -35,15 +35,14 @@ function App() {
     return (
     <div className="App">
         <ProductCard
+          product={product}
           image={<ProductImage />}
           info={
             <ProductInfo>
-              <ProductCategory category={procuct.category} />
-              <ProductTitle title={procuct.title} />
-              <ProductText text={procuct.text} />
-              <ProductPrice 
-                price={procuct.price}
-                discountedPrice={procuct.discountedPrice} />
+              <ProductCategory />
+              <ProductTitle />
+              <ProductText />
+              <ProductPrice />
             </ProductInfo>
           }
           action={<ProductBUtton />}

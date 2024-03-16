@@ -1,7 +1,9 @@
 import React from 'react'
+import { useProductCardContext } from './ProductCardContext'
 
-export const ProductText = ({text}:{text: string}) => {
+export const ProductText = () => {
+  const { product } = useProductCardContext()
   return (
-    <p className='text'>{text}</p>
+    <p className='text'>{product.text}</p>
   )
 }
