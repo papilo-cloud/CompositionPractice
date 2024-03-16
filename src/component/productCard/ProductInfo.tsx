@@ -1,26 +1,13 @@
-import React from 'react'
-import { ProductCategory } from './ProductCategory';
-import { ProductTitle } from './ProductTitle';
-import { ProductText } from './ProductText';
-import { ProductPrice } from './ProductPrice';
+import React, { ReactNode } from 'react'
 
 
 export interface ProductInfoProps {
-  category: string;
-  text: string;
-  price: string;
-  discountedPrice: string;
-  title: string;
+  children: ReactNode
 }
-export const ProductInfo = ({category, text, price, discountedPrice, title}: ProductInfoProps) => {
+export const ProductInfo = ({children}: ProductInfoProps) => {
   return (
     <div className='product-info'>
-        <ProductCategory category={category} />
-        <ProductTitle title={title} />
-        <ProductText text={text} />
-        <ProductPrice 
-          price={price}
-          discountedPrice={discountedPrice} />
+        {children}
     </div>
   )
 }

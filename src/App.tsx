@@ -2,8 +2,12 @@
 import './App.css'
 import { ProductBUtton } from './component/productCard/ProductBUtton'
 import { ProductCard } from './component/productCard/ProductCard'
+import { ProductCategory } from './component/productCard/ProductCategory'
 import { ProductImage } from './component/productCard/ProductImage'
 import { ProductInfo } from './component/productCard/ProductInfo'
+import { ProductPrice } from './component/productCard/ProductPrice'
+import { ProductText } from './component/productCard/ProductText'
+import { ProductTitle } from './component/productCard/ProductTitle'
 
 interface Product {
   id: number;
@@ -32,13 +36,16 @@ function App() {
     <div className="App">
         <ProductCard
           image={<ProductImage />}
-          info={<ProductInfo 
-                  category={procuct.category}
-                  title={procuct.title}
-                  text={procuct.text}
-                  price={procuct.price}
-                  discountedPrice={procuct.discountedPrice}
-                />}
+          info={
+            <ProductInfo>
+              <ProductCategory category={procuct.category} />
+              <ProductTitle title={procuct.title} />
+              <ProductText text={procuct.text} />
+              <ProductPrice 
+                price={procuct.price}
+                discountedPrice={procuct.discountedPrice} />
+            </ProductInfo>
+          }
           action={<ProductBUtton />}
          />
     </div>
