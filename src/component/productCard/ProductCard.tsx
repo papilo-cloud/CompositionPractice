@@ -1,18 +1,17 @@
 import React, { ReactNode } from 'react'
-import { ProductImage } from './ProductImage'
-import { ProductInfo } from './ProductInfo'
-import { ProductBUtton } from './ProductBUtton'
 export interface ProductCardProps {
-
+  image?: ReactNode;
+  info?: ReactNode;
+  action?: ReactNode;
 }
 
-export const ProductCard = () => {
+export const ProductCard = ({image, info, action}: ProductCardProps) => {
   return (
     <div className='product-card'>
-        <ProductImage />
+        {image}
         <div className="product-bottom">
-            <ProductInfo />
-            <ProductBUtton />
+            {info}
+            {action}
         </div>
     </div>
   )

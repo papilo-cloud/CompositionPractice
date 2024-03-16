@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const ProductTitle = () => {
+export const ProductTitle = ({title}: {title: string}) => {
   return (
-    <h1 className='title'>Gabrielle Essence Eau De Parfum</h1>
+    <h1 className='title'>{title}</h1>
   )
 }

@@ -1,9 +1,7 @@
 import React from 'react'
 
-export const ProductCategory = () => {
+export const ProductCategory = ({category}: {category: string}) => {
   return (
-    <div>
-        
-    </div>
+    <p className='category-category'>{category}</p>
   )
 }

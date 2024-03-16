@@ -1,4 +1,5 @@
 import React from 'react'
+import { CartIcon } from './icon/cartIcon'
 
 interface ProductBUttonProps extends React.ComponentProps<'button'> {
     text?: string
@@ -6,7 +7,7 @@ interface ProductBUttonProps extends React.ComponentProps<'button'> {
 export const ProductBUtton  = ({text= 'Add to Cart', ...props}: ProductBUttonProps) => {
   return (
     <button className='product-button' {...props}>
-        {text}
+        <CartIcon /> {text}
     </button>
   )
 }
